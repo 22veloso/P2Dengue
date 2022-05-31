@@ -1,0 +1,13 @@
+C:\Users\logatti\Desktop\P2Dengue\P2Dengue\obj\Debug\P2Dengue.csproj.AssemblyReference.cache
+C:\Users\logatti\Desktop\P2Dengue\P2Dengue\obj\Debug\P2Dengue.csproj.SuggestedBindingRedirects.cache
+C:\Users\logatti\Desktop\P2Dengue\P2Dengue\obj\Debug\P2Dengue.FrmConsultaUsuario.resources
+C:\Users\logatti\Desktop\P2Dengue\P2Dengue\obj\Debug\P2Dengue.FrmCadastroUsuario.resources
+C:\Users\logatti\Desktop\P2Dengue\P2Dengue\obj\Debug\P2Dengue.FrmPrincipal.resources
+C:\Users\logatti\Desktop\P2Dengue\P2Dengue\obj\Debug\P2Dengue.Properties.Resources.resources
+C:\Users\logatti\Desktop\P2Dengue\P2Dengue\obj\Debug\P2Dengue.csproj.GenerateResource.cache
+C:\Users\logatti\Desktop\P2Dengue\P2Dengue\obj\Debug\P2Dengue.csproj.CoreCompileInputs.cache
+C:\Users\logatti\Desktop\P2Dengue\P2Dengue\bin\Debug\P2Dengue.exe.config
+C:\Users\logatti\Desktop\P2Dengue\P2Dengue\bin\Debug\P2Dengue.exe
+C:\Users\logatti\Desktop\P2Dengue\P2Dengue\bin\Debug\P2Dengue.pdb
+C:\Users\logatti\Desktop\P2Dengue\P2Dengue\obj\Debug\P2Dengue.exe
+C:\Users\logatti\Desktop\P2Dengue\P2Dengue\obj\Debug\P2Dengue.pdb

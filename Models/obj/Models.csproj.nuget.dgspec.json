@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lucas Veloso\\OneDrive\\Área de Trabalho\\P2Dengue\\P2Dengue\\Models\\Models.csproj": {}
+    "C:\\Users\\logatti\\Desktop\\P2Dengue\\Models\\Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lucas Veloso\\OneDrive\\Área de Trabalho\\P2Dengue\\P2Dengue\\Models\\Models.csproj": {
+    "C:\\Users\\logatti\\Desktop\\P2Dengue\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lucas Veloso\\OneDrive\\Área de Trabalho\\P2Dengue\\P2Dengue\\Models\\Models.csproj",
+        "projectUniqueName": "C:\\Users\\logatti\\Desktop\\P2Dengue\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "C:\\Users\\Lucas Veloso\\OneDrive\\Área de Trabalho\\P2Dengue\\P2Dengue\\Models\\Models.csproj",
-        "packagesPath": "C:\\Users\\Lucas Veloso\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lucas Veloso\\OneDrive\\Área de Trabalho\\P2Dengue\\P2Dengue\\Models\\obj\\",
+        "projectPath": "C:\\Users\\logatti\\Desktop\\P2Dengue\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\logatti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\logatti\\Desktop\\P2Dengue\\Models\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Lucas Veloso\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\logatti\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

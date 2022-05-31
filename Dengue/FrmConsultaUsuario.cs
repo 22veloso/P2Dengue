@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace P2Dengue
 {
-    public partial class ConsultaUsuario : Form
+    public partial class FrmConsultaUsuario : Form
     {
-        public ConsultaUsuario()
+        public FrmConsultaUsuario()
         {
             InitializeComponent();
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

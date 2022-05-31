@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace P2Dengue
 {
-    public partial class FormCadastro : Form
+    public partial class FrmConsultaUsuario : Form
     {
-        public FormCadastro()
+        public FrmConsultaUsuario()
         {
             InitializeComponent();
         }

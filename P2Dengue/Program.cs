@@ -16,7 +16,7 @@ namespace P2Dengue
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormCadastro());
+            Application.Run(new FrmPrincipal());
         }
     }
 }
