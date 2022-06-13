@@ -25,23 +25,93 @@ namespace P2Dengue
             Usuario usuario = new Usuario();
 
             usuario.Nome = tbNome.Text;
-            //Popular o resto
+            usuario.Telefone = tbTelefone.Text;
+            usuario.Email = tbEmail.Text;
+            UsuarioServicos.NovoUsuario(usuario);
+            MessageBox.Show("dados salvos!!");
 
-            new UsuarioServicos().Inserir(usuario);
+
+            Endereco endereco = new Endereco();
+
+            endereco.Logradouro = tbLagradouro.Text;
+            endereco.Bairro = tbBairro.Text;
+            endereco.Cep = tbCep.Text;
+            EndereçoServiços.NovoEndereco(endereco);
         }
 
         private void FrmCadUsuario_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            //Carregar o Combo
-            cboCidade.DataSource = new CidadeServicos().FindAll();
+            string vqueryCidade = @" SELECT Id, Nome FROM Cidade";
+            cboCidade.Items.Clear();
+            cboCidade.DataSource = CidadeServiços.dql(vqueryCidade);
             cboCidade.ValueMember = "Id";
             cboCidade.DisplayMember = "Nome";
 
+            Dictionary<string, string> caso = new Dictionary<string, string>();
+            caso.Add("TestePositivo", "SIM");
+            caso.Add("TesteNegativo", "NAO");
+            cbStatus.Items.Clear();
+            cbStatus.DataSource = new BindingSource(caso, null);
+            cbStatus.DisplayMember = "Value";
+            cbStatus.ValueMember = "Key";
+
+            dgvUsuario.DataSource = EndereçoServiços.ObterTodosEnderecos();
+            
+
+        }
+
+
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+         
+
+        }
+
+        private void cbStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cboCidade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            tbNome.Clear();
+            tbTelefone.Clear();
+            tbEmail.Clear();
+            tbLagradouro.Clear();
+            tbBairro.Clear();
+            tbCep.Clear();
+            tbNome.Focus();
+
+
+        }
+
+        private void btn_fechar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
-}
+    }
+    
+    
+

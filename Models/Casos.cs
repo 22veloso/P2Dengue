@@ -10,6 +10,7 @@ namespace Models
     {
         public int Id { get; set; }
         public int QtdCasos { get; set; }
+        public DateTime DataCadastro { get; set; }
         public Usuario Usuario{ get; set; }
     }
 }

@@ -22,9 +22,32 @@ namespace P2Dengue
             FrmCadUsuario usuario = new FrmCadUsuario();
             usuario.MdiParent = this;
             usuario.Show();
+           
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usuáriosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmCUsuario usuario1= new FrmCUsuario();
+            usuario1.MdiParent = this;
+            usuario1.Show();
+        }
+
+        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

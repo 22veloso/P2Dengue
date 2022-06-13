@@ -1,38 +1,62 @@
 ﻿using Models;
-using System.Data.SqlClient;
+using System.Data;
+using System.Data.SQLite;
 
 namespace Servicos
 {
     public class UsuarioServicos
+
     {
-        string stringConn = @"Server=(localdb)\MSSQLLocalDB;Integrated Security=true;AttachDbFileNameC:\USERS\LOGATTI\DOCUMENTS\DENGUE.MDF;";
+        private static SQLiteConnection conexao;
+        private static SQLiteConnection conexaoBanco()
 
-        public void Inserir(Usuario usuario)
         {
-
-            //InserirEndereco
-            int idEndereco = new EnderecoServicos().InserirEndereco(usuario.Endereco);
-            
-            //Inserir o usuário:
-            SqlConnection conexao = new SqlConnection(stringConn);
-            string sql = "INSERT INTO usuario (Nome, Telefone, Email, IdEnderenco) values (@Nome, @Telefone, @Email, @IdEnderenco)";
-            try
+            conexao = new SQLiteConnection("Data Source =C:\\Users\\Lucas Veloso\\OneDrive\\Área de Trabalho\\P2Dengue\\Banco\\banco_Dengue.db");
             {
                 conexao.Open();
-                SqlCommand comando = new SqlCommand(sql, conexao);
-                comando.Parameters.AddWithValue("@Nome", usuario.Nome);
-                comando.Parameters.AddWithValue("@Telefone", usuario.Telefone);
-                comando.Parameters.AddWithValue("@Email", usuario.Email);
-                comando.Parameters.AddWithValue("@IdEnderenco", idEndereco);
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-            finally
-            {
-                conexao.Close();
+                return conexao;
             }
         }
-    }
-}
+ 
+        static List<Usuario> lst = new List<Usuario>();
+       public static void NovoUsuario(Usuario u)
+        {
+            var cmd = conexaoBanco().CreateCommand();
+            cmd.CommandText = "insert into Usuario ( Nome,Email, Telefone) values (@Nome, @Email, @Telefone)";
+            cmd.Parameters.AddWithValue("@Nome", u.Nome);
+            cmd.Parameters.AddWithValue("@Email", u.Email);
+            cmd.Parameters.AddWithValue("@Telefone", u.Telefone);
+            lst.Add(u);
+            cmd.ExecuteNonQuery();
+            conexaoBanco().Close();
+
+        
+            
+
+            
+
+        }
+
+        public static DataTable ObterTodosUsuarios()
+        {
+            SQLiteDataAdapter da = null;
+                DataTable dt= new DataTable();
+            try
+            {
+                var vcon = conexaoBanco();
+                var cmd= vcon.CreateCommand();
+                cmd.CommandText = "SELECT *from Usuario";
+                da= new SQLiteDataAdapter(cmd.CommandText, vcon);
+                da.Fill(dt);
+                vcon.Close();
+                return dt;
+            }
+             catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        }
+        }
