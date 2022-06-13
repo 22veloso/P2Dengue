@@ -16,23 +16,24 @@ namespace Servicos
         private static SQLiteConnection conexaoBanco()
 
         {
-            conexao = new SQLiteConnection("Data Source =C:\\Users\\Lucas Veloso\\OneDrive\\Área de Trabalho\\P2Dengue\\Banco\\banco_Dengue.db");
+            conexao = new SQLiteConnection(@"Data Source =C:\Users\logatti\Desktop\P2Dengue\Banco\banco_Dengue.db");
             {
                 conexao.Open();
                 return conexao;
             }
         }
         static List<Endereco> lst = new List<Endereco>();
-        public static void NovoEndereco(Endereco e)
+        public static long NovoEndereco(Endereco e)
         {
             var cmd = conexaoBanco().CreateCommand();
-            cmd.CommandText = "insert into Endereço ( Logradouro,Bairro,Cep) values (@Logradouro, @Bairro, @Cep)";
+            cmd.CommandText = "insert into Endereco ( Logradouro,Bairro,Cep) values (@Logradouro, @Bairro, @Cep); select last_insert_rowid()";
             cmd.Parameters.AddWithValue("@Logradouro", e.Logradouro);
-            cmd.Parameters.AddWithValue("@Bairro", e.Bairro);
+            cmd.Parameters.AddWithValue("@Bairro", e.Bairro.Id);
             cmd.Parameters.AddWithValue("@Cep", e.Cep);
             lst.Add(e);
-            cmd.ExecuteNonQuery();
+            Int64 idEndereco = (Int64)cmd.ExecuteScalar();
             conexaoBanco().Close();
+            return idEndereco;
 
         }
         public static DataTable ObterTodosEnderecos()
@@ -43,7 +44,7 @@ namespace Servicos
             {
                 var vcon = conexaoBanco();
                 var cmd = vcon.CreateCommand();
-                cmd.CommandText = "SELECT *from Endereço";
+                cmd.CommandText = "select distinct B.descricao, (select count(*) from Endereco EI, Usuario U where EI.Bairro = E.Bairro and U.IdEndereco = EI.Id and U.status = 'SIM') as qtdCasos from Endereco E, Bairro B, Usuario U where E.Bairro = B.id and E.Id = U.IdEndereco and U.status = 'SIM'";
                 da = new SQLiteDataAdapter(cmd.CommandText, vcon);
                 da.Fill(dt);
                 vcon.Close();
@@ -55,5 +56,7 @@ namespace Servicos
             }
 
         }
+
+
     }
 }

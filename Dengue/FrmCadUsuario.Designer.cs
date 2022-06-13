@@ -45,18 +45,18 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cboCidade = new System.Windows.Forms.ComboBox();
+            this.cboBairro = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.tbBairro = new System.Windows.Forms.TextBox();
             this.tbLagradouro = new System.Windows.Forms.TextBox();
             this.tbCep = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dgvUsuario = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtCidade = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
@@ -229,45 +229,46 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.cboCidade);
+            this.panel2.Controls.Add(this.cboBairro);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.tbBairro);
+            this.panel2.Controls.Add(this.txtCidade);
             this.panel2.Controls.Add(this.tbLagradouro);
             this.panel2.Controls.Add(this.tbCep);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(4, 232);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(474, 232);
+            this.panel2.Size = new System.Drawing.Size(474, 217);
             this.panel2.TabIndex = 22;
             // 
-            // cboCidade
+            // cboBairro
             // 
-            this.cboCidade.FormattingEnabled = true;
-            this.cboCidade.Location = new System.Drawing.Point(28, 201);
-            this.cboCidade.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cboCidade.Name = "cboCidade";
-            this.cboCidade.Size = new System.Drawing.Size(285, 23);
-            this.cboCidade.TabIndex = 26;
-            this.cboCidade.SelectedIndexChanged += new System.EventHandler(this.cboCidade_SelectedIndexChanged);
+            this.cboBairro.FormattingEnabled = true;
+            this.cboBairro.Location = new System.Drawing.Point(18, 33);
+            this.cboBairro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cboBairro.Name = "cboBairro";
+            this.cboBairro.Size = new System.Drawing.Size(285, 23);
+            this.cboBairro.TabIndex = 26;
+            this.cboBairro.SelectedIndexChanged += new System.EventHandler(this.cboCidade_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 183);
+            this.label4.Location = new System.Drawing.Point(18, 15);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 15);
+            this.label4.Size = new System.Drawing.Size(38, 15);
             this.label4.TabIndex = 25;
-            this.label4.Text = "Cidade";
+            this.label4.Text = "Bairro";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(28, 83);
+            this.label9.Location = new System.Drawing.Point(15, 66);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 15);
@@ -277,24 +278,16 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(28, 135);
+            this.label8.Location = new System.Drawing.Point(15, 114);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(28, 15);
             this.label8.TabIndex = 23;
             this.label8.Text = "CEP";
             // 
-            // tbBairro
-            // 
-            this.tbBairro.Location = new System.Drawing.Point(31, 45);
-            this.tbBairro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tbBairro.Name = "tbBairro";
-            this.tbBairro.Size = new System.Drawing.Size(226, 23);
-            this.tbBairro.TabIndex = 22;
-            // 
             // tbLagradouro
             // 
-            this.tbLagradouro.Location = new System.Drawing.Point(31, 102);
+            this.tbLagradouro.Location = new System.Drawing.Point(18, 85);
             this.tbLagradouro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbLagradouro.Name = "tbLagradouro";
             this.tbLagradouro.Size = new System.Drawing.Size(361, 23);
@@ -302,22 +295,11 @@
             // 
             // tbCep
             // 
-            this.tbCep.Location = new System.Drawing.Point(31, 153);
+            this.tbCep.Location = new System.Drawing.Point(18, 132);
             this.tbCep.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbCep.Name = "tbCep";
             this.tbCep.Size = new System.Drawing.Size(163, 23);
             this.tbCep.TabIndex = 20;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(28, 27);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 15);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Bairro";
             // 
             // label11
             // 
@@ -362,6 +344,27 @@
             this.label13.Size = new System.Drawing.Size(189, 28);
             this.label13.TabIndex = 27;
             this.label13.Text = "Cadastro de Usuario";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(15, 165);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 15);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Cidade";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // txtCidade
+            // 
+            this.txtCidade.Location = new System.Drawing.Point(18, 183);
+            this.txtCidade.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(226, 23);
+            this.txtCidade.TabIndex = 22;
+            this.txtCidade.TextChanged += new System.EventHandler(this.txtCidade_TextChanged);
             // 
             // FrmCadUsuario
             // 
@@ -414,14 +417,12 @@
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox cboCidade;
+        private System.Windows.Forms.ComboBox cboBairro;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox tbBairro;
         private System.Windows.Forms.TextBox tbLagradouro;
         private System.Windows.Forms.TextBox tbCep;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label11;
         private TextBox textBox1;
         private Label label12;
@@ -429,6 +430,8 @@
         private Button btn_fechar;
         private DataGridView dgvUsuario;
         private Label label13;
+        private TextBox txtCidade;
+        private Label label5;
     }
 }
 

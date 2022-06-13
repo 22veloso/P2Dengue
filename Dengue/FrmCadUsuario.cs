@@ -22,30 +22,32 @@ namespace P2Dengue
         private void btnSalvar_Click(object sender, EventArgs e)
         {
 
-            Usuario usuario = new Usuario();
+            Endereco endereco = new Endereco();
+            endereco.Logradouro = tbLagradouro.Text;
+            endereco.Bairro = new Bairro() { Id = int.Parse(cboBairro.SelectedValue.ToString()) };
+            endereco.Cidade = new Cidade() { NomeCidade = txtCidade.Text };
+            endereco.Cep = tbCep.Text;
+            long idEndereco = EndereçoServiços.NovoEndereco(endereco);
 
+            Usuario usuario = new Usuario();
             usuario.Nome = tbNome.Text;
             usuario.Telefone = tbTelefone.Text;
             usuario.Email = tbEmail.Text;
+            usuario.Endereco = new Endereco() { Id = (int)idEndereco };
+            usuario.Status = cbStatus.Text;
             UsuarioServicos.NovoUsuario(usuario);
             MessageBox.Show("dados salvos!!");
-
-
-            Endereco endereco = new Endereco();
-
-            endereco.Logradouro = tbLagradouro.Text;
-            endereco.Bairro = tbBairro.Text;
-            endereco.Cep = tbCep.Text;
-            EndereçoServiços.NovoEndereco(endereco);
+            
         }
 
         private void FrmCadUsuario_Load(object sender, EventArgs e)
         {
-            string vqueryCidade = @" SELECT Id, Nome FROM Cidade";
-            cboCidade.Items.Clear();
-            cboCidade.DataSource = CidadeServiços.dql(vqueryCidade);
-            cboCidade.ValueMember = "Id";
-            cboCidade.DisplayMember = "Nome";
+
+            string vqueryBairro = @" SELECT Id, Descricao FROM Bairro";
+            cboBairro.Items.Clear();
+            cboBairro.DataSource = BairroServicos.dql(vqueryBairro);
+            cboBairro.ValueMember = "Id";
+            cboBairro.DisplayMember = "Descricao";
 
             Dictionary<string, string> caso = new Dictionary<string, string>();
             caso.Add("TestePositivo", "SIM");
@@ -75,7 +77,7 @@ namespace P2Dengue
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            
+            dgvUsuario.DataSource = EndereçoServiços.ObterTodosEnderecos();
         }
 
         private void cboCidade_SelectedIndexChanged(object sender, EventArgs e)
@@ -99,7 +101,7 @@ namespace P2Dengue
             tbTelefone.Clear();
             tbEmail.Clear();
             tbLagradouro.Clear();
-            tbBairro.Clear();
+            txtCidade.Clear();
             tbCep.Clear();
             tbNome.Focus();
 
@@ -109,6 +111,21 @@ namespace P2Dengue
         private void btn_fechar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCidade_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
     }

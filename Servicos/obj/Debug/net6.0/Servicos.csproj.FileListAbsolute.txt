@@ -30,3 +30,5 @@ C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\P2Dengue\Servicos\obj\Debug\net
 C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\P2Dengue\Servicos\obj\Debug\net6.0\ref\Servicos.dll
 C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\P2Dengue\Servicos\bin\Debug\net6.0\Servicos.runtimeconfig.json
 C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\P2Dengue\Servicos\obj\Debug\net6.0\Servicos.genruntimeconfig.cache
+C:\Users\logatti\Desktop\P2Dengue\Servicos\bin\Debug\net6.0\Servicos.runtimeconfig.json
+C:\Users\logatti\Desktop\P2Dengue\Servicos\obj\Debug\net6.0\Servicos.genruntimeconfig.cache

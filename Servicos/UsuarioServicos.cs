@@ -11,7 +11,7 @@ namespace Servicos
         private static SQLiteConnection conexaoBanco()
 
         {
-            conexao = new SQLiteConnection("Data Source =C:\\Users\\Lucas Veloso\\OneDrive\\Área de Trabalho\\P2Dengue\\Banco\\banco_Dengue.db");
+            conexao = new SQLiteConnection(@"Data Source =C:\Users\logatti\Desktop\P2Dengue\Banco\banco_Dengue.db");
             {
                 conexao.Open();
                 return conexao;
@@ -22,18 +22,15 @@ namespace Servicos
        public static void NovoUsuario(Usuario u)
         {
             var cmd = conexaoBanco().CreateCommand();
-            cmd.CommandText = "insert into Usuario ( Nome,Email, Telefone) values (@Nome, @Email, @Telefone)";
+            cmd.CommandText = "insert into Usuario ( Nome,Email, Telefone, IdEndereco, Status) values (@Nome, @Email, @Telefone, @IdEndereco, @Status)";
             cmd.Parameters.AddWithValue("@Nome", u.Nome);
             cmd.Parameters.AddWithValue("@Email", u.Email);
             cmd.Parameters.AddWithValue("@Telefone", u.Telefone);
+            cmd.Parameters.AddWithValue("@IdEndereco", u.Endereco.Id);
+            cmd.Parameters.AddWithValue("@Status", u.Status);
             lst.Add(u);
             cmd.ExecuteNonQuery();
             conexaoBanco().Close();
-
-        
-            
-
-            
 
         }
 

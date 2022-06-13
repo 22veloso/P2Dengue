@@ -8,7 +8,7 @@ using System.Data.SQLite;
 
 namespace Servicos
 {
-    public class CidadeServiços
+    public class BairroServicos
     {
         private static SQLiteConnection conexao;
         private static SQLiteConnection conexaoBanco()

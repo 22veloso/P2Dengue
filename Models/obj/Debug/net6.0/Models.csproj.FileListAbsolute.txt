@@ -24,3 +24,5 @@ C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\P2Dengue\Models\obj\Debug\net6.
 C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\P2Dengue\Models\obj\Debug\net6.0\ref\Models.dll
 C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\P2Dengue\Models\bin\Debug\net6.0\Models.runtimeconfig.json
 C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\P2Dengue\Models\obj\Debug\net6.0\Models.genruntimeconfig.cache
+C:\Users\logatti\Desktop\P2Dengue\Models\bin\Debug\net6.0\Models.runtimeconfig.json
+C:\Users\logatti\Desktop\P2Dengue\Models\obj\Debug\net6.0\Models.genruntimeconfig.cache
