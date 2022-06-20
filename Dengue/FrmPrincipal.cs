@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Servicos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,14 +43,20 @@ namespace P2Dengue
 
         private void usuáriosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FrmCUsuario usuario1= new FrmCUsuario();
-            usuario1.MdiParent = this;
-            usuario1.Show();
+            FrmListarUsuario us =new FrmListarUsuario();
+            us.MdiParent = this;
+            us.Show();
+          
         }
 
         private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_fechar2_Click(object sender, EventArgs e)
+        {
+           Close();
         }
     }
 }

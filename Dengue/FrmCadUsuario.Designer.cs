@@ -38,6 +38,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_atualizar = new System.Windows.Forms.Button();
             this.btn_fechar = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.btn_cancelar = new System.Windows.Forms.Button();
@@ -49,14 +50,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.txtCidade = new System.Windows.Forms.TextBox();
             this.tbLagradouro = new System.Windows.Forms.TextBox();
             this.tbCep = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.dgvUsuario = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtCidade = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
@@ -151,6 +152,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_atualizar);
             this.panel1.Controls.Add(this.btn_fechar);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.btn_cancelar);
@@ -163,6 +165,16 @@
             this.panel1.Size = new System.Drawing.Size(1263, 75);
             this.panel1.TabIndex = 20;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btn_atualizar
+            // 
+            this.btn_atualizar.Location = new System.Drawing.Point(864, 11);
+            this.btn_atualizar.Name = "btn_atualizar";
+            this.btn_atualizar.Size = new System.Drawing.Size(117, 37);
+            this.btn_atualizar.TabIndex = 19;
+            this.btn_atualizar.Text = "Atualizar";
+            this.btn_atualizar.UseVisualStyleBackColor = true;
+            this.btn_atualizar.Click += new System.EventHandler(this.btn_atualizar_Click);
             // 
             // btn_fechar
             // 
@@ -213,12 +225,11 @@
             this.label10.Size = new System.Drawing.Size(57, 15);
             this.label10.TabIndex = 21;
             this.label10.Text = "Pesquisar";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // btnPesquisar
             // 
             this.btnPesquisar.Image = global::P2Dengue.Properties.Resources.Animals_Mosquito_icon;
-            this.btnPesquisar.Location = new System.Drawing.Point(962, 46);
+            this.btnPesquisar.Location = new System.Drawing.Point(962, 50);
             this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(88, 68);
@@ -251,7 +262,7 @@
             this.cboBairro.Name = "cboBairro";
             this.cboBairro.Size = new System.Drawing.Size(285, 23);
             this.cboBairro.TabIndex = 26;
-            this.cboBairro.SelectedIndexChanged += new System.EventHandler(this.cboCidade_SelectedIndexChanged);
+            this.cboBairro.SelectedIndexChanged += new System.EventHandler(this.cboBairro_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -285,6 +296,15 @@
             this.label8.TabIndex = 23;
             this.label8.Text = "CEP";
             // 
+            // txtCidade
+            // 
+            this.txtCidade.Location = new System.Drawing.Point(15, 183);
+            this.txtCidade.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(226, 23);
+            this.txtCidade.TabIndex = 22;
+            this.txtCidade.TextChanged += new System.EventHandler(this.txtCidade_TextChanged);
+            // 
             // tbLagradouro
             // 
             this.tbLagradouro.Location = new System.Drawing.Point(18, 85);
@@ -301,6 +321,18 @@
             this.tbCep.Size = new System.Drawing.Size(163, 23);
             this.tbCep.TabIndex = 20;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(15, 165);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 15);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Cidade";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -313,13 +345,13 @@
             this.label11.TabIndex = 23;
             this.label11.Text = "Cadastro do Endereço:";
             // 
-            // textBox1
+            // txtPesquisa
             // 
-            this.textBox1.Location = new System.Drawing.Point(623, 74);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(331, 23);
-            this.textBox1.TabIndex = 25;
+            this.txtPesquisa.Location = new System.Drawing.Point(623, 74);
+            this.txtPesquisa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(331, 23);
+            this.txtPesquisa.TabIndex = 25;
             // 
             // dgvUsuario
             // 
@@ -333,6 +365,7 @@
             this.dgvUsuario.RowTemplate.Height = 25;
             this.dgvUsuario.Size = new System.Drawing.Size(584, 329);
             this.dgvUsuario.TabIndex = 26;
+            this.dgvUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuario_CellContentClick);
             // 
             // label13
             // 
@@ -345,27 +378,6 @@
             this.label13.TabIndex = 27;
             this.label13.Text = "Cadastro de Usuario";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(15, 165);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 15);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Cidade";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // txtCidade
-            // 
-            this.txtCidade.Location = new System.Drawing.Point(18, 183);
-            this.txtCidade.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(226, 23);
-            this.txtCidade.TabIndex = 22;
-            this.txtCidade.TextChanged += new System.EventHandler(this.txtCidade_TextChanged);
-            // 
             // FrmCadUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -373,7 +385,7 @@
             this.ClientSize = new System.Drawing.Size(1263, 545);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.dgvUsuario);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnPesquisar);
@@ -424,7 +436,7 @@
         private System.Windows.Forms.TextBox tbLagradouro;
         private System.Windows.Forms.TextBox tbCep;
         private System.Windows.Forms.Label label11;
-        private TextBox textBox1;
+        private TextBox txtPesquisa;
         private Label label12;
         private Button btn_cancelar;
         private Button btn_fechar;
@@ -432,6 +444,7 @@
         private Label label13;
         private TextBox txtCidade;
         private Label label5;
+        private Button btn_atualizar;
     }
 }
 

@@ -43,7 +43,7 @@ namespace P2Dengue
         private void FrmCadUsuario_Load(object sender, EventArgs e)
         {
 
-            string vqueryBairro = @" SELECT Id, Descricao FROM Bairro";
+            string vqueryBairro = @" SELECT Id, Descricao FROM Bairro ORDER BY Descricao";
             cboBairro.Items.Clear();
             cboBairro.DataSource = BairroServicos.dql(vqueryBairro);
             cboBairro.ValueMember = "Id";
@@ -75,26 +75,25 @@ namespace P2Dengue
             
         }
 
-        private void btnPesquisar_Click(object sender, EventArgs e)
-        {
-            dgvUsuario.DataSource = EndereçoServiços.ObterTodosEnderecos();
-        }
+        private void btnPesquisar_Click(object sender, EventArgs e) { 
+            DataTable dt = new DataTable();
+           string Descricao = txtPesquisa.Text;
+            if(Descricao == "")
+            {
+                MessageBox.Show("Bairro nao encontrado!");
+                txtPesquisa.Focus();
+                return;
+            }
 
-        private void cboCidade_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+            string sql = @" SELECT Descricao FROM Bairro WHERE Descricao= '" + txtPesquisa.Text+ "'";
+            dgvUsuario.DataSource = BairroServicos.ObterBairro(sql);
 
-        private void label10_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
         }
 
+   
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             tbNome.Clear();
@@ -124,6 +123,21 @@ namespace P2Dengue
         }
 
         private void txtCidade_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_atualizar_Click(object sender, EventArgs e)
+        {
+            dgvUsuario.DataSource = EndereçoServiços.ObterTodosEnderecos();
+        }
+
+        private void cboBairro_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

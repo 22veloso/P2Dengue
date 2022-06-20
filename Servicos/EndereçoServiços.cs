@@ -16,7 +16,7 @@ namespace Servicos
         private static SQLiteConnection conexaoBanco()
 
         {
-            conexao = new SQLiteConnection(@"Data Source =C:\Users\logatti\Desktop\P2Dengue\Banco\banco_Dengue.db");
+            conexao = new SQLiteConnection(@"Data Source =C:\Users\Lucas Veloso\OneDrive\Área de Trabalho\P2Dengue\Banco\banco_Dengue.db");
             {
                 conexao.Open();
                 return conexao;
@@ -44,7 +44,7 @@ namespace Servicos
             {
                 var vcon = conexaoBanco();
                 var cmd = vcon.CreateCommand();
-                cmd.CommandText = "select distinct B.descricao, (select count(*) from Endereco EI, Usuario U where EI.Bairro = E.Bairro and U.IdEndereco = EI.Id and U.status = 'SIM') as qtdCasos from Endereco E, Bairro B, Usuario U where E.Bairro = B.id and E.Id = U.IdEndereco and U.status = 'SIM'";
+                cmd.CommandText = "select distinct B.descricao, (select count(*) from Endereco EI, Usuario U where EI.Bairro = E.Bairro and U.IdEndereco = EI.Id and U.status = 'SIM') as qtdCasos from Endereco E, Bairro B, Usuario U where E.Bairro = B.id and E.Id = U.IdEndereco and U.status = 'SIM' order by status";
                 da = new SQLiteDataAdapter(cmd.CommandText, vcon);
                 da.Fill(dt);
                 vcon.Close();
